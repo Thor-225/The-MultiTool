@@ -7,13 +7,13 @@ body {
   margin: 0;
 }
 
-/* Top navigation bar */
+
 .navbar {
   display: flex;
   background-color: #5e0000;
 }
 
-/* Navigation bar links */
+
 .navbar a {
   color: white;
   padding: 14px 20px;
@@ -23,49 +23,71 @@ body {
   text-shadow: #f1f1f1 1px 1px 2px;
 }
 
-/* Change color on hover */
+
 .navbar a:hover {
   background-color: #ddd;
   color: black;
 }
 
-/* Column container */
 .container {  
   display: flex;
   flex-wrap: wrap;
 }
 
-/* Sidebar/left column */
+
 .side {
   flex: 30%;
   background-color: #f1f1f1;
   padding: 20px;
 }
 
-/* Main column */
 .main {
   flex: 70%;
   background-color: white;
   padding: 20px;
 }
 
-/* Fake image, just for this example */
+
 .fakeimg {
   background-color: #aaa;
   width: 100%;
   padding: 20px;
 }
 
-/* Footer */
 footer {
   padding: 20px;
   text-align: center;
   background: #5e0000;
 }
 
-/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 700px) {
   .container, .navbar {   
     flex-direction: column;
   }
+}
+
+.container2 {
+    text-align: center;
+}
+
+.board {
+    display: inline-grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-gap: 5px;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background-color: lightgray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 36px;
+    cursor: pointer;
+}
+
+button {
+    margin-top: 20px;
+    font-size: 18px;
 }
