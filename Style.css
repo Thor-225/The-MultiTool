@@ -48,7 +48,7 @@ body {
 }
 
 
-.fakeimg {
+.Box {
   background-color: #aaa;
   width: 100%;
   padding: 20px;
@@ -91,3 +91,24 @@ button {
     margin-top: 20px;
     font-size: 18px;
 }
+#box { 
+  height: 50px; 
+  width: 50px; 
+  background-color: blue; 
+  position: relative; 
+  animation-name: frem-og-tilbake; 
+  animation-duration: 4s; 
+  animation-iteration-count: infinite; 
+  animation-direction: alternate;
+  border-radius: 1cm;
+  padding-left: 0.2cm;
+  rotate: 90deg;
+} 
+   @keyframes frem-og-tilbake { 
+    0% { 
+  left: 0px; 
+       } 
+  100% { 
+  left: 430px; 
+  } 
+} 
