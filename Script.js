@@ -1,3 +1,4 @@
+/* filepath: c:\Users\skjel\OneDrive\Vg1\Programmering\Swiss Army Knife\Script.js */
 let currentPlayer = 'X';
 const cells = document.querySelectorAll('.cell');
 
@@ -9,11 +10,15 @@ function handleCellClick() {
     if (!this.textContent) {
         this.textContent = currentPlayer;
         if (checkWin()) {
-            alert(`${currentPlayer} wins!`);
-            reset();
+            setTimeout(() => {
+                alert(`${currentPlayer} wins!`);
+                reset();
+            }, 300);
         } else if (checkDraw()) {
-            alert("It's a draw!");
-            reset();
+            setTimeout(() => {
+                alert("It's a draw!");
+                reset();
+            }, 300);
         } else {
             currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
             if (currentPlayer === 'O') {
@@ -22,16 +27,24 @@ function handleCellClick() {
         }
     }
 }
+
 function computerMove() {
     const emptyCells = Array.from(cells).filter(cell => !cell.textContent);
+    if (emptyCells.length === 0) return;
+    
     const randomIndex = Math.floor(Math.random() * emptyCells.length);
     emptyCells[randomIndex].textContent = 'O';
+    
     if (checkWin()) {
-        alert('Computer wins!');
-        reset();
+        setTimeout(() => {
+            alert('Computer wins!');
+            reset();
+        }, 300);
     } else if (checkDraw()) {
-        alert("It's a draw!");
-        reset();
+        setTimeout(() => {
+            alert("It's a draw!");
+            reset();
+        }, 300);
     } else {
         currentPlayer = 'X';
     }
