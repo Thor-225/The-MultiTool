@@ -1,6 +1,8 @@
 let currentPlayer = 'X';
 let cells;
 let resetBtn;
+let playerScore = 0;
+let aiScore = 0;
 // Fikset coden ved å legge til ein code som ventet på at de andre elementene
 // var lastet inn. etter det funket endelig koden som den skulle.
 document.addEventListener('DOMContentLoaded', function() {
@@ -12,6 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     resetBtn.addEventListener('click', redo);
+    updateDisplay();
 });
 // Funksjon som ser når du klikker på en celle og om det gjør at du vinner,
 // eller om det er uavgjort. Hvis ingen av delene skjer, bytter den spiller.
@@ -19,6 +22,16 @@ function handleCellClick() {
     if (!this.textContent) {
         this.textContent = currentPlayer;
         if (win()) {
+        playerScore++;
+        updateDisplay();
+        if (playerScore === 3) {
+            setTimeout(() => {
+                alert("You beat R0B0 by reaching 3 wins! Scores reset.");
+                playerScore = 0;
+                aiScore = 0;
+                updateDisplay();
+            }, 300);
+        }
         setTimeout(() => {
         alert(`${currentPlayer} You win, good job!`);
         redo();
@@ -31,7 +44,7 @@ function handleCellClick() {
         } else {
          currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
          if (currentPlayer === 'O') {
-        setTimeout(R0B0, 420);
+            setTimeout(R0B0, 420);
         }
       }
     }
@@ -45,6 +58,16 @@ function R0B0() {
     emptyCells[randomIndex].textContent = 'O';
 // Win eller Tie eller forsett.
     if (win()) {
+        aiScore++;
+        updateDisplay();
+        if (aiScore === 3) {
+            setTimeout(() => {
+                alert("R0B0 has reached 3 wins! Are you going easy on him? Scores reset.");
+                playerScore = 0;
+                aiScore = 0;
+                updateDisplay();
+            }, 300);
+        }
         setTimeout(() => {
         alert('R0B0 triumphs!');
         redo();
@@ -85,4 +108,9 @@ function redo() {
     cell.textContent = '';
 });
 currentPlayer = 'X';
+}
+
+function updateDisplay() {
+    document.getElementById('playerScore').textContent = playerScore;
+    document.getElementById('aiScore').textContent = aiScore;
 }
