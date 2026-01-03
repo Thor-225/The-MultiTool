@@ -37,6 +37,12 @@ function glemmeknapp(displayName, username) {
     const glemknappen = document.createElement('button');
     glemknappen.textContent = 'Forget Me';
     glemknappen.classList.add('login-button');
+    glemknappen.style.backgroundColor = '#5e0000';
+    glemknappen.style.color = 'white';
+    glemknappen.style.padding = '10px 20px';
+    glemknappen.style.fontSize = '18px';
+    glemknappen.style.border = 'none';
+    glemknappen.style.cursor = 'pointer';
     glemknappen.addEventListener('click', function() {
         localStorage.removeItem('username');
         displayName.textContent = '';
