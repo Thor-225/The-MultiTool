@@ -119,4 +119,49 @@ button {
   100% { 
   left: 250px; 
   } 
-} 
+}
+
+.login-form {
+  text-align: center;
+}
+
+.login-form h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+#usernameInput {
+  font-size: 18px;
+  padding: 10px;
+  width: 250px;
+  margin-bottom: 20px;
+}
+
+#loginBtn {
+  font-size: 18px;
+  padding: 10px 20px;
+  background-color: #5e0000;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#displayName {
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.login-button {
+  font-size: 18px;
+  padding: 10px 20px;
+  background-color: #5e0000;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
